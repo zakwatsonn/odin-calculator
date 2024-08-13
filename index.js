@@ -2,7 +2,7 @@
 let firstNumber = 0
 let secondNumber = 0
 let operator = ''
-let displayvalue = ''
+let displayValue = ''
 
 //creating the 4 different operations
 function addition(a, b) {
@@ -22,3 +22,6 @@ function division(a, b) {
 function operate(first, second, operation) {
 
 }
+
+//displaying the current number
+const calculatorDisplay = document.querySelector('.display')
