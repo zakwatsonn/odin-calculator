@@ -42,5 +42,7 @@ const calculatorDisplay = document.querySelector('.display')
 //adding event listeners to all of the number buttons
 const numberButtons = document.querySelectorAll('.number')
 numberButtons.forEach((currentNumberButton) => {
-    currentNumberButton.addEventListener('click', numberOnClick(currentNumberButton))
+    currentNumberButton.addEventListener('click', () => {
+        displayValue = displayValue + currentNumberButton.textContent
+    })
 })
