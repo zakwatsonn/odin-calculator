@@ -4,6 +4,9 @@ let secondNumber = 0
 let operator = ''
 let displayValue = ''
 
+//declaring the calculator display node
+const calculatorDisplay = document.querySelector('.display')
+
 //creating the 4 different operations
 function addition(a, b) {
     return a + b
@@ -31,13 +34,22 @@ function operate(first, second, operation) {
             return multiplication(first, second)
             break
         case '/':
+            if (second === '0') {
+                alert('we see you dividing by 0, try again bitch')
+                firstNumber = 0
+                secondNumber = 0
+                operator = ''
+                displayValue = ''
+                calculatorDisplay.textContent = ''
+            }
+            else {
             return division(first, second)
+            }
             break
     }
 }
 
-//declaring the calculator display node
-const calculatorDisplay = document.querySelector('.display')
+
 
 //adding event listeners to all of the number buttons
 const numberButtons = document.querySelectorAll('.number')
@@ -70,7 +82,7 @@ equalsButton.addEventListener('click', () => {
 
 //adding functionality to the clear button
 const clearButton = document.querySelector('.clearButton')
-clearButton.addEventListener('click', () => {
+clearButton.addEventListener('click', function clearPressed() {
     firstNumber = 0
     secondNumber = 0
     operator = ''
