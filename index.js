@@ -44,5 +44,6 @@ const numberButtons = document.querySelectorAll('.number')
 numberButtons.forEach((currentNumberButton) => {
     currentNumberButton.addEventListener('click', () => {
         displayValue = displayValue + currentNumberButton.textContent
+        calculatorDisplay.textContent = displayValue
     })
 })
