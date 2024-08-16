@@ -76,7 +76,12 @@ const equalsButton = document.querySelector('.equals')
 equalsButton.addEventListener('click', () => {
     secondNumber = displayValue
     firstNumber = operate(firstNumber, secondNumber, operator)
-    displayValue = firstNumber
+    if (firstNumber % 1 !== 0) {
+        displayValue = firstNumber.toFixed(3)
+    }
+    else {
+        displayValue = firstNumber
+    }
     calculatorDisplay.textContent = displayValue
 })
 
