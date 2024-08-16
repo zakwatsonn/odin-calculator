@@ -74,15 +74,19 @@ operatorButtons.forEach((currentOperatorButton) => {
 //making the equals button function
 const equalsButton = document.querySelector('.equals')
 equalsButton.addEventListener('click', () => {
-    secondNumber = displayValue
-    firstNumber = operate(firstNumber, secondNumber, operator)
-    if (firstNumber % 1 !== 0) {
-        displayValue = firstNumber.toFixed(3)
+    if (operator === '') {
+        firstNumber = displayValue
+    } else {
+        secondNumber = displayValue
+        firstNumber = operate(firstNumber, secondNumber, operator)
+        if (firstNumber % 1 !== 0) {
+            displayValue = firstNumber.toFixed(3)
+        }
+        else {
+            displayValue = firstNumber
+        }
+        calculatorDisplay.textContent = displayValue
     }
-    else {
-        displayValue = firstNumber
-    }
-    calculatorDisplay.textContent = displayValue
 })
 
 //adding functionality to the clear button
